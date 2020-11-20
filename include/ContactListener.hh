@@ -9,7 +9,7 @@ class ContactListener : public b2ContactListener
 {
     private:
         Score* score;
-        std::vector<GameObject*>* items;
+        std::vector<GameObject*>* covid;
         int sceneIndex{};
     public:
         ContactListener(Score*&, std::vector<GameObject*>*&);

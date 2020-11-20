@@ -4,7 +4,7 @@
 #include<box2d/box2d.h>
 
 #include "Character.hh"
-#include "Maze.hh"
+#include "Background.hh"
 #include "Inputs.hh"
 #include "Tile.hh"
 #include "GameObject.hh"
@@ -123,22 +123,22 @@ int main()
     stairs->SetTagName("stairs");
     //stairs->SetDebug(true);*/
 
-    std::vector<GameObject*>* items{new std::vector<GameObject*>()};
-    items->push_back(virus);
-    items->push_back(virus2);
-    items->push_back(virus3);
-    items->push_back(virus4);
-    items->push_back(virus5);
-    items->push_back(virus6);
-    items->push_back(virus7);
-    items->push_back(virus8);
-    items->push_back(virus9);
-    items->push_back(virus10);
-    items->push_back(virus11);
-    items->push_back(virus12);
+    std::vector<GameObject*>* covid{new std::vector<GameObject*>()};
+    covid->push_back(virus);
+    covid->push_back(virus2);
+    covid->push_back(virus3);
+    covid->push_back(virus4);
+    covid->push_back(virus5);
+    covid->push_back(virus6);
+    covid->push_back(virus7);
+    covid->push_back(virus8);
+    covid->push_back(virus9);
+    covid->push_back(virus10);
+    covid->push_back(virus11);
+    covid->push_back(virus12);
     //items->push_back(stairs);
 
-    ContactListener* conctactListener{new ContactListener(score, items)};
+    ContactListener* conctactListener{new ContactListener(score, covid)};
 
     world->SetContactListener(conctactListener);
 
@@ -213,9 +213,9 @@ int main()
 
         //stairs->Update();
         
-        for(auto& item : *items)
+        for(auto& covid : *covid)
         {
-            item->Update();
+            covid->Update();
         }
 
         character1->Update();

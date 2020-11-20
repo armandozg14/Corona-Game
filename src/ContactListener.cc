@@ -6,10 +6,10 @@
 #include<algorithm>
 
 
-ContactListener::ContactListener(Score*& score, std::vector<GameObject*>*& items)
+ContactListener::ContactListener(Score*& score, std::vector<GameObject*>*& covid)
 {
     this->score = score;
-    this->items = items;
+    this->covid = covid;
 }
 
 ContactListener::~ContactListener()
@@ -32,7 +32,7 @@ void ContactListener::BeginContact(b2Contact* contact)
         {
             std::cout << "eliminated" << std::endl;
             score->AddPoints(5);
-            items->erase(std::remove(items->begin(), items->end(), bodyDataB), items->end());
+            covid->erase(std::remove(covid->begin(), covid->end(), bodyDataB), covid->end());
             bodyDataB->~GameObject();
         }
         /*if(std::strcmp(bodyDataA->GetTagName(), "player") == 0 && std::strcmp(bodyDataB->GetTagName(), "stairs") == 0)

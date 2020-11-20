@@ -1,4 +1,4 @@
-#include "Maze.hh"
+#include "Background.hh"
 
 Maze::Maze(unsigned int N, unsigned int M, float scale, float cropSize, sf::Texture*& texture, const char* path, b2World*& world)
 {
